@@ -1,7 +1,3 @@
----
-created_at: 30-10-2025
-modified_at: 30-10-2025
----
 ### Azure - HA lab
 
 Note: The lab environment created is a sandbox environment and apart from some IAM restrictions, you're free to create whichever Check Point solution you wish.
@@ -15,7 +11,7 @@ Please refer to this diagram if you get lost at any point. The IP addresses and 
 It will make the lab a lot easier if you choose **unique** ranges for each of your vNETs.
 
 
-![[azure-ha-topology.png]]
+![](../assets/azure-ha-topology.png)
 
 ** Pre-requisites **
 - Check Point Management station (this session is based around having a self-managed server, though Smart-1 Cloud can also be used. Ask your instructor). There is a guide for deploying this in the Day 1 docs.
@@ -134,7 +130,7 @@ You can find the cluster IP address in the Azure portal when you select the Acti
 	- **Sync**
 	- Disable **Anti-Spoofing**
 
-![[cluster-topology.png]]
+![](../assets/cluster-topology.png)
 
 5. Select **OK** to finish the configuration.
 6. **Publish** the session.
@@ -159,7 +155,7 @@ Each unit should show its status and the status of the other member
 
 Output example:
 
-![[cluster-state.png]]
+![](../assets/cluster-state.png)
 
 **Module 2- Configuring East/West Traffic (Spoke vNet)**
 
