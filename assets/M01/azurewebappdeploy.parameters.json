@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmName": {
+      "value": "lab-webapp-vm"
+    },
+    "nsgName": {
+      "value": "lab-webapp-nsg"
+    },
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "sshPublicKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDD4lcNjnTDQolHyGmV0QQUX+VP+OH4pntq+4cm9rGqmtZAqZZ9GMXACVO5Ah8WhDgUscxjGVZEmc0k51GMmFE0u/O6p3sFnAaU/NMyInQm3zkuFI6/jJuN2RwHkY0GYZ5TFuIPwmU3oTGW0s5kE7KA2YFMj//sx1aXqcN0K80EkGlxVfqleKtugpGUmKjgGHc2SPFCtwvzlS0tRFlH1I168P4aYc2rfryFNCO4ifuUHZyVvgPWLb/Oj8+0751iOeDUvDgvtrWSWmTeLVsVpbBgcqy44VIB5JyFzFhAJ/IF2NRyLYeY03UZlqYKYWINVp57E2qgD5j5STQidxcSbC6J93JsmOcv0UfjiHZXigGTDG5t1AjDrYF2ToUtNdJ6o3cyIxMUqHcbs5yikaR3tuecFXNHFs5pMFKh52foKX56LrhWjXhwIlV3PRPzsPh1gCQxODqT7QAnp5dJb46L4yh7/VDcJrCI8VwXmGkErc4dNqIM+UhkVD6sKlvxhAQmm0E= imported-openssh-key"
+    }
+  }
+}

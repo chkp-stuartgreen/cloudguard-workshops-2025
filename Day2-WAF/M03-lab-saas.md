@@ -1,0 +1,15 @@
+**Lab 2 - WAF SaaS**
+- On the Linux VM
+	- Keep the VM and container from the previous lab - but run `docker compose down` from the cloudguard-waf-demo directory.
+	- Edit the docker-compose.yml file and comment out lines -18-22 to remove the cloudguard container from the stack. The other three containers should still be active. Save the file.
+	- Run `docker compose up -d` to restart the vulnerable containers.
+	- If you're not already using it, configure the public DNS entries for your VMs.
+	- If you are running in a Check Point session - your trainer will set this up for you and provide you with a hostname.
+- In the Infinity Portal
+	- Create another new asset and follow the same process as before.
+	- Configure a new asset in the same flow as before, but the URL will be the hostname you setup in public DNS and the upstream / origin will be your VM public IP. When you get to the deployment options screen - make sure to select **SaaS**.
+	- Click through the following options accepting the defaults until you're taken to the profile page again.
+	- You will see new options here around domain validation. You will need to follow these instructions to add the relevant CNAMEs or TXT records to your DNS. If you are in a Check Point led session - this will be done for you.
+	- Once the domain is validated, wait until the wizard is completed - then check access.
+	- The last step is to secure the origin by taking the IPs shown and editing the NSG attached to your VM so only those IPs can access it.
+	- Test everything is working as expected and then try attacking the VM again. Your attacks should be unsuccessful. 
