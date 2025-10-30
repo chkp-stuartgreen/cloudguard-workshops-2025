@@ -63,7 +63,7 @@ The name of the tenant should match with the account name you entered during cre
 
 You will be redirected to the CloudGuard WAF Dashboard.
 
-## Create a set of publicly web application in Azure
+## Create a set of public web applications in Azure
 
 There are many ways to publicly host a web application. For this use case, we will create a Juiceshop and DVWA web application, and a vulnerble API called Vampi API hosted in Azure. If you don't have access to a cloud environment to publish a web application, ask your trainer to give you a link of a hosted web application to use during the lab.
 

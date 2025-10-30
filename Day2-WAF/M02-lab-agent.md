@@ -1,4 +1,4 @@
-# M02 Lab Agent based
+# M02 Lab Agent Based
 
 ## Deploy CloudGuard WAF Single Gateway in Azure
 
