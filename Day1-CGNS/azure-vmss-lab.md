@@ -16,7 +16,7 @@ Modules:
 7. Optional Lab: Testing Scale-out
 
 ---
- 
+
 **Lab Overview**
 
 In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) inside a new vNet hub. If this is a Check Point led event, it will be continuiing in the sandbox environment you were provided credentials for.
@@ -25,6 +25,7 @@ In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) insid
 **VMSS Deployment**
 
 ![VMSS lab topology](../assets/azure-vmss-topology.png)
+
   
 **Pre-requisites:**
 
