@@ -1,12 +1,9 @@
 
-
-Check Point CloudGuard-Network R81.20/R82
-
-
-### Azure Scale Set (VMSS)
+## CloudGuard Network Security (CGNS) Workshop
+### Hands-on - Azure Scale Set (VMSS)
 
 
-Modules:
+#### Modules:
 1. Create the CloudGuard Scale Set (VMSS)
 2. Configuring CME on the Smart Center Server
 3. VMSS network configuration
@@ -15,14 +12,14 @@ Modules:
 6. Optional Lab: Troubleshooting and Scaling Issues 
 7. Optional Lab: Testing Scale-out
 
+
 ---
- 
-**Lab Overview**
+
+#### Lab Overview
 
 In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) inside a new vNet hub. If this is a Check Point led event, it will be continuiing in the sandbox environment you were provided credentials for.
 
-
-**VMSS Deployment**
+**Lab Topology**
 
 ![VMSS lab topology](../assets/azure-vmss-topology.png)
   
@@ -33,9 +30,11 @@ In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) insid
 - Windows PC with Smart Console and Putty client. This can be a VM in Azure / AWS if required.
 - Windows PC must have unrestricted external access. A cloud-based VM will help here.
 
+---
+
 ### Module 1 – Create the CloudGuard Scale Set
 
-Step 1: Deploy the Scale Set
+#### Step 1: Deploy the Scale Set
 
 1.	Log in to the Azure Portal at https://portal.azure.com using the credentials provided.
 2.	Select Create a resource. 
@@ -115,7 +114,7 @@ Step 1: Deploy the Scale Set
 15.	The Purchase Agreement will now appear. Approve the Terms and Select Create 
 
 
-Step 2: Assign Service Principal to VMSS Resource Group
+#### Step 2 (OPTIONAL): Assign Service Principal to VMSS Resource Group
 
 ***NOTE:***
 In the lab's Azure bootcamp the Service Principal and secret are already created. The details are under the Bootcamp page under Service Principal. Please only follow these steps to review what is created or if you are running the instructions in your own environment.
@@ -150,7 +149,7 @@ Example: &lt;your name&gt;-vmss
 
 ---
 
-**Module  2 – Configuring CME on the Smart Center Server**
+### Module  2 – Configuring CME on the Smart Center Server
 
 
 1.	Log into Check Point Smart Console, create a Simple policy called Standard-vmss, with a single rule as Any, Any, Accept, Log rule, and publish the changes
@@ -524,4 +523,4 @@ This test is used to confirm that the Azure scaling option is working as expecte
 
 9.	After approximately 10 minutes, a scale-in event is triggered. This deletes the new CloudGuard Security Gateway.
 
-_End of labs_
+_End of lab_
