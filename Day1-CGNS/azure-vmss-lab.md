@@ -198,7 +198,7 @@ cpmgmt> set expert password
 [Expert@cpmgmt:0]save config
 ```
 
-5.	Past the autoprov-cfg command into the Putty session
+5.	Paste the autoprov-cfg command into the Putty session
 6.	Verify the command successfully communicates to Azure by running the command:
 
 ```service cme test```
