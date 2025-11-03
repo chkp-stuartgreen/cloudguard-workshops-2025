@@ -15,13 +15,14 @@
 
 ---
 
-#### Lab Overview
+**Lab Overview**
 
 In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) inside a new vNet hub. If this is a Check Point led event, it will be continuiing in the sandbox environment you were provided credentials for.
 
 **Lab Topology**
 
 ![VMSS lab topology](../assets/azure-vmss-topology.png)
+
   
 **Pre-requisites:**
 
@@ -523,4 +524,4 @@ This test is used to confirm that the Azure scaling option is working as expecte
 
 9.	After approximately 10 minutes, a scale-in event is triggered. This deletes the new CloudGuard Security Gateway.
 
-_End of lab_
+_End of labs_

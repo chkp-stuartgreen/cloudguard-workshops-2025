@@ -1,6 +1,14 @@
-# M04 Lab WAF Configuration
+# M04 - Lab WAF Configuration
 
-## Onboarding Web Assets to the Infinity Portal
+## Introduction
+
+In this module, you will learn how to onboard web application and API assets to the Infinity Portal and configure their security settings using CloudGuard WAF. You will add multiple web applications and APIs, set their protection modes, and apply best practices for web and API security. By the end of this module, you will understand how to register assets, configure security profiles, and prepare your environment for testing and protection in subsequent labs.
+
+In this module, you will:
+
+- Task 1: Create Web Application and API Assets
+
+**Estimated time: 25 minutes**
 
 ### Task 1: Create Web Application and API Assets
 
@@ -14,12 +22,12 @@ In the lab prerequisites, we deployed three Docker containers, including Juice S
 
 | Asset Name         | Public URL                     | Private IP URL                     | Web Application Best Practice            | API Protection Practice | 
 |--------------------|--------------------------------|------------------------------------|---------------------------|------------------------------------|
-| juiceshop-unsecured| http://juiceshop-unsecured.app | http://192.168.2.x:3001            | Learn / Detect            |Disabled| 
-| juiceshop-secured  | http://juiceshop-secured.app   | http://192.168.2.x:3001            | Prevent                   |Disabled| 
-| dvwa-unsecured     | http://dvwa-unsecured.app      | http://192.168.2.x:3000            | Learn / Detect            |Disabled| 
-| dvwa-secured       | http://dvwa-secured.app        | http://192.168.2.x:3000            | Prevent                   |Disabled| 
-| vampi-unsecured    | http://vampi-unsecured.app     | http://192.168.2.x:3002            | Disabled            |Learn / Detect| 
-| vampi-secured      | http://vampi-secured.app       | http://192.168.2.x:3002            | Disabled                   |Prevent| 
+| juiceshop-unsecured| http://juiceshop-unsecured.app | http://172.16.0.x:3001            | Learn / Detect            |Disabled| 
+| juiceshop-secured  | http://juiceshop-secured.app   | http://172.16.0.x:3001            | Prevent                   |Disabled| 
+| dvwa-unsecured     | http://dvwa-unsecured.app      | http://172.16.0.x:3000            | Learn / Detect            |Disabled| 
+| dvwa-secured       | http://dvwa-secured.app        | http://172.16.0.x:3000            | Prevent                   |Disabled| 
+| vampi-unsecured    | http://vampi-unsecured.app     | http://172.16.0.x:3002            | Disabled            |Learn / Detect| 
+| vampi-secured      | http://vampi-secured.app       | http://172.16.0.x:3002            | Disabled                   |Prevent| 
 
 The following configuration parameters are the same for all assets. Leave everything else default:
 
