@@ -1,6 +1,6 @@
 # M01 - CloudGuard WAF Lab Pre-requisites
 
-## Overview
+## Introduction
 
 For this lab you will need the following:
 - A laptop with a modern browser that supports HTML 5.0

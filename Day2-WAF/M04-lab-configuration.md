@@ -1,6 +1,14 @@
-# M04 Lab WAF Configuration
+# M04 - Lab WAF Configuration
 
-## Onboarding Web Assets to the Infinity Portal
+## Introduction
+
+In this module, you will learn how to onboard web application and API assets to the Infinity Portal and configure their security settings using CloudGuard WAF. You will add multiple web applications and APIs, set their protection modes, and apply best practices for web and API security. By the end of this module, you will understand how to register assets, configure security profiles, and prepare your environment for testing and protection in subsequent labs.
+
+In this module, you will:
+
+- Task 1: Create Web Application and API Assets
+
+**Estimated time: 25 minutes**
 
 ### Task 1: Create Web Application and API Assets
 
