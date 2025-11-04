@@ -21,7 +21,7 @@ In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) insid
 
 **Lab Topology**
 
-![VMSS lab topology](../assets/azure-vmss-topology.png)
+![VMSS lab topology](../assets/azure-vmss-topology.drawio.png)
 
   
 **Pre-requisites:**
