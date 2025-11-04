@@ -11,7 +11,7 @@ Please refer to this diagram if you get lost at any point. The IP addresses and 
 It will make the lab a lot easier if you choose **unique** ranges for each of your vNETs.
 
 
-![](../assets/azure-ha-topology.png)
+![](../assets/azure-ha-topology.drawio.png)
 
 ** Pre-requisites **
 - Check Point Management station (this session is based around having a self-managed server, though Smart-1 Cloud can also be used. Ask your instructor). There is a guide for deploying this in the Day 1 docs.
