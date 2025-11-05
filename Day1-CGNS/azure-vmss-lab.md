@@ -159,7 +159,7 @@ Example: &lt;your name&gt;-vmss
 
 Example:
 ```shell
-autoprov-cfg init Azure -mn “<management-name>” -tn “<configuration-template-name>” -otp “<SIC-key>” -ver “R81.20/R82” -po “<policy-name>” -cn “<controller-name>” -sb “<azure-subscription>” -at “<active-directory-tenant-id>” -aci “<client-id>” -acs “<client-secret>”
+autoprov-cfg init Azure -mn "<management-name>" -tn "<configuration-template-name>" -otp "<SIC-key>" -ver "R81.20/R82" -po "<policy-name>" -cn "<controller-name>" -sb "<azure-subscription>" -at "<active-directory-tenant-id>" -aci "<client-id>" -acs "<client-secret>"
 ```
 Command explained:
 
