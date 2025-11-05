@@ -362,7 +362,7 @@ In this section of the lab, you will be creating a virtual machine in each spoke
 4. Login to the session:
 	Username: **fwadmin**
 	Password: **Checkpoint123!**
-5. Ping Spoke-2-Workload server – 10.11.0.4
+5. Ping 10.11.0.4 (Spoke2 workload server)
 6. Check the logs in SmartConsole.
 
 ## End of Lab
