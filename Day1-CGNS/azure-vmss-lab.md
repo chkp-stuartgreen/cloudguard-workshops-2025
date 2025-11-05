@@ -38,10 +38,15 @@ In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) insid
 #### Step 1: Deploy the Scale Set
 
 1.	Log in to the Azure Portal at https://portal.azure.com using the credentials provided.
+
 2.	Select Create a resource. 
-3.	In the search box enter Check Point and select the CloudGuard Network Security – Firewall & Threat  
+
+3.	In the search box enter Check Point and select the CloudGuard Network Security – Firewall & Threat 
+
 4.	Then select from the dropdown list the CloudGuard Scale Set 
+
 5.	Select Create
+
 6.	Use the following to configure the Scale Set:
 
 
@@ -67,8 +72,6 @@ In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) insid
 |Virtual Machine Size|**Default** (Standard D4ds v5)||
 |SIC Key|Checkpoint123||
 |Confirm SIC key|Checkpoint123||
-
-
 
 
 8.	Select Next: CloudGuard Advanced Settings.
@@ -98,8 +101,11 @@ In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) insid
 |Additional disk space|**Leave default**|
 
 9.	Select Next: Network settings >
+
 10.	In the Network settings, Edit Virtual Network
+
 11.	In the VirtualNetwork, Select Edit virtual network
+
 12.	Configure the VirtualNetwork as follows:
 
 -	Name:			 VMSS-vnet
@@ -111,7 +117,9 @@ In this lab, you will be deploying a CGNS Virtual Machine Scale Set (VMSS) insid
 
 
 13.	In the Network Secure Groups select Create New and leave the name as the default
+
 14.	Select Review + Create
+
 15.	The Purchase Agreement will now appear. Approve the Terms and Select Create 
 
 
@@ -122,30 +130,48 @@ In the lab's Azure bootcamp the Service Principal and secret are already created
 
 
 1.	Create an Azure Service account. In Azure Portal go to the Azure Active Directory section on the left side
+
 2.	Click the App registration, and then select New Registration.
-3.	Provide the name as  <Your Name>-vmss
-4.	Select the option for Accounts in this organizational directory only (<Account Name> - Single-tenant)
+
+3.	Provide the name as  `<Your Name>-vmss`
+
+4.	Select the option for Accounts in this organizational 
+directory only (<Account Name> - Single-tenant)
+
 5.	Redirect URL set to Web  and  https://localhost/check-point-autoprovision
+
 6.	Select Register
+
 7.	Once registered this will bring you to the new APP overview page you just created.
 Copy the Application (client) ID and Directory (tenant) ID key from this Overview page to your Notepad that you will use later.
+
 8.	Select Certificates & Secrets and select the New Client secret.
+
 9.	Fill in the following option for the client's secret
   - Description: Give a key description
   - Duration: Never expires
 10.	Click Add 
+
 11.	Copy the Key by the Value and paste it into your Notepad. This can’t be retrieved later.
+
 12.	Now you need to find the Azure subscription. This can be found under the overview page of any Azure resources (You can also go to All services go under Subscriptions select the subscription and copy the subscription ID to your notepad that the VMSS resource will be deployed under.
+
 13.	Attach the Application ID to the Azure Subscription by going under the Subscription selecting the subscription the VMSS service will be deployed under  and selecting Access Control (IAM)
+
 14.	Click on the Add -> Add role assignment. 
+
 15.	Select Reader and Next
+
 16.	Select the Select Members 
+
 17.	Past in the name of the app registration you created earlier
 
-Example: &lt;your name&gt;-vmss 
+    Example: &lt;your name&gt;-vmss 
 
 18.	Select your App Registration
+
 19.	Close and Select Next
+
 20.	Select Review + assign
 
 ---
@@ -153,8 +179,10 @@ Example: &lt;your name&gt;-vmss
 ### Module  2 – Configuring CME on the Smart Center Server
 
 
-1.	Log into Check Point Smart Console, create a Simple policy called Standard-vmss, with a single rule as Any, Any, Accept, Log rule, and publish the changes
+1.	Log into Check Point Smart Console, create a Simple policy called Standard-vmss, with a single rule as Any, Any, Accept, Log rule, and publish the changes.
+
 2.	SSH into the Check Point Smart Center with the Putty client.
+
 3.	Create the command to configure CME on the Smart Center:
 
 Example:
@@ -179,7 +207,7 @@ Command explained:
 Command example:
 
 ```bash
-autoprov-cfg init Azure -mn "CP-managment" -tn "Azure-Lab-Template" -otp "Checkpoint123" -ver “R81.20” -po "Standard-vmss" -cn "Azure-Lab" -sb "da551519-1bd8-xxxxxxx-xxxxxxx " -at "c82f513e-c21f-4a87-xxxxxxx-xxxxxxx " -aci "e69452bc-4be8-xxxxxxx-xxxxxxx" -acs “YO9E2STVZfn+umgHwG9lYQnhuvDIixxxxxxxxxx=”
+autoprov-cfg init Azure -mn "CP-managment" -tn "Azure-Lab-Template" -otp "Checkpoint123" -ver “R81.20” -po "Standard-vmss" -cn "Azure-Lab" -sb "da551519-1bd8-xxxxxxx-xxxxxxx" -at "c82f513e-c21f-4a87-xxxxxxx-xxxxxxx" -aci "e69452bc-4be8-xxxxxxx-xxxxxxx" -acs "YO9E2STVZfn+umgHwG9lYQnhuvDIixxxxxxxxxx="
 ```
 
 4.	On the Smart Center Putty session go into Expert mode:
@@ -199,6 +227,7 @@ cpmgmt> set expert password
 ```
 
 5.	Paste the autoprov-cfg command into the Putty session
+
 6.	Verify the command successfully communicates to Azure by running the command:
 
 ```service cme test```
@@ -227,18 +256,27 @@ In this lab, we will continue to use the default assigned Public IP and TCP serv
 
 Steps:
 1.	Add a new App subnet to the VMSS vNet
+
 2.	Deploy two NGINX VMs in Azure in the App subnet
+
 3.	Create a Web backend LB for the VM
+
 4.	Configure Check Point policy 
+
 5.	Test inbound connection.
 
 **Step 1: Deploy an App vNets**
 
 1.	Log in to the Azure Portal at https://portal.azure.com using the credentials provided.
+
 2.	Select Create a resource. 
+
 3.	In the search box enter Virtual Network and press Enter.
+
 4.	Select the Virtual Network option.
+
 5.	Select Create.
+
 6.	Configure the Spoke vNet as follows:
 
 
@@ -252,26 +290,33 @@ Steps:
 
 
 7.	Select Next: IP Addresses.
+
 8.	Configure the IP Address with the following:
 - Delete the default IPv4 address space
 - New address: 10.21.0.0/16
 
 9.	Select add subnet.
-10.	Use the following to create the new subnet.
 
+10.	Use the following to create the new subnet.
 - Subnet name: VMSS-App-subnet
 - Subnet address range: 10.21.0.0/24
 
 11.	Select Add.
+
 12.	Select Review + create
+
 13.	Select Create.
 
 **Step 2: Create the web server for the spoke**
 
 1.	Select Create a resource. 
+
 2.	In the search box enter NGINX Open Source packaged by Bitnami and press Enter.
+
 3.	Select NGINX Open Source packaged by Bitnami (Make sure it's the Virtual machine addition)
+
 4.	Select Create
+
 5.	Fill in the following details:
 
 |**Selection**|**Choice**|**Notes**|
@@ -292,7 +337,9 @@ Steps:
 
 
 6.	Select Next: Disk > Leave everything as default
+
 7.	Select Next: Network settings >
+
 8.	In the Network settings, Select the following details:
 
 |**Selection**|**Choice**|
@@ -308,9 +355,13 @@ Steps:
 
 
 9.	Select Next: Management > Leave everything as default
+
 10.	Select Next: Monitoring > 
+
 11.	Ensure the option for Boot diagnostics -> Enable with managed storage account is selected.
+
 12.	Select Review + Create.
+
 13.	Approve the Terms and Select Create
 
 **Step 3: Create vNet Peer for the Spoke to the Check Point VMSS vNet**
@@ -343,28 +394,39 @@ Steps:
 **Step 4: Create the Routes in Azure**
 
 1.	Go to the VMSS  Resource Group ODL-<*>-<*>-03.
-2.	Select Create.
-3.	In the search bar, type route table, and press Enter.
-4.	Select the Route table.
-5.	Select Create.
-6.	Use the following to create the route table:
 
+2.	Select Create.
+
+3.	In the search bar, type route table, and press Enter.
+
+4.	Select the Route table.
+
+5.	Select Create.
+
+6.	Use the following to create the route table:
 - Region: Select the same region as the VMSS-App resources
 - Name: VMSS-App-Route-Table
 
 7.	Select Review + Create.
-8.	Select Create.
-9.	Select Go to resource when deployment is completed.
-10.	Select Subnets on the left.
-11.	Select Associate.
-12.	Configure the Subnet:
 
+8.	Select Create.
+
+9.	Select Go to resource when deployment is completed.
+
+10.	Select Subnets on the left.
+
+11.	Select Associate.
+
+12.	Configure the Subnet:
 - Virtual Network: VMSS-App-vnet
 - Subnet: VMSS-App-subnet
 
 13.	Select Ok.
+
 14.	Select Routes on the left.
+
 15.	Select Add to add a default Route.
+
 16.	Add the following routes:
 
 
@@ -379,11 +441,14 @@ Steps:
 ### Module  4 –  Create Load Balancer rules to allow Web server connectivity 
 
 1.	Go to the VMSS Resource Group: ODL-<*>-<*>-03
-2.	Select the load balancer called frontend-lb
-3.	In the Load Balancer settings select Frontend IP configuration.
-4.	Select Add.
-5.	Configure the new IP address.
 
+2.	Select the load balancer called frontend-lb
+
+3.	In the Load Balancer settings select Frontend IP configuration.
+
+4.	Select Add.
+
+5.	Configure the new IP address.
 - Name: VMSS-App-Server-PIP
 - Public IP address: Create a new
   - Add a public IP address
@@ -391,8 +456,11 @@ Steps:
   - Gateway Load balancer: None
 
 6.	Select Add.
+
 7.	Select the Load balancing rules.
+
 8.	Select Load Balancing rules under the Load Balancer and click Add.
+
 9.	Create a new Load-balancing rule as follows:
 
 |Name|App-Web-LB-Rule|
@@ -440,6 +508,7 @@ Example:
 - This can be any service that represents the port the App is listening for.
 
 5.	Install a policy
+
 6.	Test a web connection to the Public Application IP (External Load Balancer IP) and monitor the Smart Console logs
 
 ---
@@ -451,6 +520,7 @@ Example:
 Troubleshooting CME and/or autoprovision process on the Management Station
 
 1.	Log into the export mode on the Management station.
+
 2.	Issue an echo command:
 
 `echo “****** Start Debug ******” >> /var/log/CPcme/cme.log`
@@ -508,6 +578,7 @@ This test is used to confirm that the Azure scaling option is working as expecte
 ```shell
 [Expert@HostName:0] ./var/tmp/simulate_cpu_load.sh
 ```
+
 5.	In another command-line shell, examine the current CPU load (must be at a high level):
 
 ```shell
@@ -515,7 +586,9 @@ This test is used to confirm that the Azure scaling option is working as expecte
 ```
 
 6.	After 10 minutes, a scale-out event is triggered. This creates a newly provisioned CloudGuard Security Gateway.
+
 7.	After the new CloudGuard Security Gateways are provisioned, on the old CloudGuard Security Gateways press any key to stop the shell script.
+
 8.	On the old CloudGuard Security Gateways, in another command-line shell, examine the current CPU load (must go back to a normal level):
 
 ```shell
